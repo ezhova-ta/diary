@@ -6,6 +6,7 @@ import com.example.diary.di.DiScopes
 import com.example.diary.presenter.MainActivityPresenter
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
@@ -32,15 +33,17 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @ProvidePresenter
+    fun providePresenter(): MainActivityPresenter =
+        Toothpick.openScope(DiScopes.APP_SCOPE).getInstance(MainActivityPresenter::class.java)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         val appScope = Toothpick.openScope(DiScopes.APP_SCOPE)
         Toothpick.inject(this, appScope)
-
         bindScope()
+
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.onCreate()
     }
 
     private fun bindScope() {
