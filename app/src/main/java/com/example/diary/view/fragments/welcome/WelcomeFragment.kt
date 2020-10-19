@@ -36,6 +36,14 @@ class WelcomeFragment : MvpAppCompatFragment(), WelcomeView {
         return inflater.inflate(R.layout.welcome_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        get_temperature_button.setOnClickListener {
+            presenter.onGetTemperatureButtonClick()
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         presenter.onResume()
@@ -47,5 +55,14 @@ class WelcomeFragment : MvpAppCompatFragment(), WelcomeView {
 
     override fun hideTitle() {
         welcome_title.visibility = View.GONE
+    }
+
+    override fun showTemperature(temperature: Int) {
+        val temperatureString = String.format("Air temperature: %d%s", temperature, "°C")
+        welcome_title.text = temperatureString
+    }
+
+    override fun showGettingTemperatureErrorMessage() {
+        welcome_title.text = resources.getString(R.string.getting_temperature_error_message)
     }
 }

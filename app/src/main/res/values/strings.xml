@@ -1,3 +1,4 @@
 <resources>
     <string name="welcome_title">Welcome!</string>
+    <string name="getting_temperature_error_message">Failed to get air temperature :(</string>
 </resources>

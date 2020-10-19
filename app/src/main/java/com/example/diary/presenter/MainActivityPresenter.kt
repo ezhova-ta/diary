@@ -10,7 +10,6 @@ import javax.inject.Inject
 @InjectViewState
 class MainActivityPresenter @Inject constructor(private val router: Router) : MvpPresenter<MainView>() {
     override fun onFirstViewAttach() {
-        super.onFirstViewAttach()
         router.newRootScreen(Screens.WelcomeScreen())
     }
 }
