@@ -50,6 +50,9 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.2.0'
 
+    implementation("com.squareup.okhttp3:logging-interceptor:3.14.2")
+    implementation("com.squareup.okhttp3:okhttp:3.14.2")
+
     implementation 'androidx.work:work-runtime-ktx:2.4.0'
     implementation 'androidx.work:work-rxjava2:2.4.0'
 
