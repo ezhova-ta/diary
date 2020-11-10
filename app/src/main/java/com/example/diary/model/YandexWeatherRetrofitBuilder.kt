@@ -1,12 +1,13 @@
 package com.example.diary.model
 
 import android.util.Log
+import com.example.diary.model.ApiConstants.YANDEX_WEATHER_BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
-object GismeteoRetrofitBuilder {
+object YandexWeatherRetrofitBuilder {
     private val client: OkHttpClient
     private val retrofit: Retrofit
 
@@ -24,8 +25,11 @@ object GismeteoRetrofitBuilder {
             .build()
 
         retrofit = Retrofit.Builder()
-            .baseUrl("https://api.gismeteo.net/v2/")
+            .baseUrl(YANDEX_WEATHER_BASE_URL)
             .client(client)
             .build()
     }
+
+    fun getRetrofit() =
+        retrofit
 }

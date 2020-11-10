@@ -1,6 +1,6 @@
 package com.example.diary.presenter.welcome
 
-import com.example.diary.model.WeatherRepository
+import com.example.diary.model.repository.WeatherRepository
 import com.example.diary.view.fragments.welcome.WelcomeView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
