@@ -1,6 +1,6 @@
 package com.example.diary.model.api.yandex.weather
 
-import com.example.diary.model.ApiConstants.YANDEX_API_KEY
+import com.example.diary.model.ApiConstants.YANDEX_WEATHER_API_KEY
 import com.example.diary.model.Lang
 import com.example.diary.model.responses.yandex.weather.YandexWeatherResponse
 import io.reactivex.Single
@@ -14,6 +14,6 @@ interface YandexWeather {
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("lang") lang: String = Lang.RU.value,
-        @Header("X-Yandex-API-Key") yandexApiKey: String = YANDEX_API_KEY
+        @Header("X-Yandex-API-Key") yandexApiKey: String = YANDEX_WEATHER_API_KEY
     ): Single<YandexWeatherResponse>
 }

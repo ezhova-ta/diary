@@ -8,7 +8,9 @@ import io.reactivex.Single
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-class WeatherRepositoryImpl @Inject constructor(private val yandexWeatherRetrofitBuilder: YandexWeatherRetrofitBuilder) : WeatherRepository {
+class WeatherRepositoryImpl @Inject constructor(
+    private val yandexWeatherRetrofitBuilder: YandexWeatherRetrofitBuilder
+) : WeatherRepository {
     private val yandexWeatherRetrofit: Retrofit
         get() = yandexWeatherRetrofitBuilder.getRetrofit()
 
