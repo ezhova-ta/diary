@@ -1,9 +1,7 @@
 package com.example.diary.presenter.welcome
 
 import android.util.Log
-import com.example.diary.model.Lang
 import com.example.diary.model.repository.MusicRepository
-import com.example.diary.model.repository.WeatherRepository
 import com.example.diary.view.fragments.welcome.WelcomeView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -17,7 +15,6 @@ import javax.inject.Inject
 @InjectViewState
 class WelcomePresenter @Inject constructor(
     private val router: Router,
-    private val weatherRepository: WeatherRepository,
     private val musicRepository: MusicRepository
 ) : MvpPresenter<WelcomeView>() {
     private val compositeDisposable = CompositeDisposable()
